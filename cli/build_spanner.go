@@ -3,5 +3,5 @@
 package main
 
 import (
-	_ "github.com/mattes/migrate/database/spanner"
+	_ "github.com/segmentio/migrate/database/spanner"
 )

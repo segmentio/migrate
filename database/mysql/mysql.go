@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-sql-driver/mysql"
-	"github.com/mattes/migrate"
-	"github.com/mattes/migrate/database"
+	"github.com/segmentio/mysql"
+	"github.com/segmentio/migrate"
+	"github.com/segmentio/migrate/database"
 )
 
 func init() {
@@ -315,7 +315,7 @@ func (m *Mysql) ensureVersionTable() error {
 
 // Returns the bool value of the input.
 // The 2nd return value indicates if the input was a valid bool value
-// See https://github.com/go-sql-driver/mysql/blob/a059889267dc7170331388008528b3b44479bffb/utils.go#L71
+// See https://github.com/segmentio/mysql/blob/a059889267dc7170331388008528b3b44479bffb/utils.go#L71
 func readBool(input string) (value bool, valid bool) {
 	switch input {
 	case "1", "true", "TRUE", "True":

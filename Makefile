@@ -78,11 +78,11 @@ list-external-deps:
 
 
 restore-import-paths:
-	find . -name '*.go' -type f -execdir sed -i '' s%\"github.com/$(REPO_OWNER)/migrate%\"github.com/mattes/migrate%g '{}' \;
+	find . -name '*.go' -type f -execdir sed -i '' s%\"github.com/$(REPO_OWNER)/migrate%\"github.com/segmentio/migrate%g '{}' \;
 
 
 rewrite-import-paths:
-	find . -name '*.go' -type f -execdir sed -i '' s%\"github.com/mattes/migrate%\"github.com/$(REPO_OWNER)/migrate%g '{}' \;
+	find . -name '*.go' -type f -execdir sed -i '' s%\"github.com/segmentio/migrate%\"github.com/$(REPO_OWNER)/migrate%g '{}' \;
 
 
 # example: fswatch -0 --exclude .godoc.pid --event Updated . | xargs -0 -n1 -I{} make docs

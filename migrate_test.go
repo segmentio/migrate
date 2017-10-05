@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	dStub "github.com/mattes/migrate/database/stub"
-	"github.com/mattes/migrate/source"
-	sStub "github.com/mattes/migrate/source/stub"
+	dStub "github.com/segmentio/migrate/database/stub"
+	"github.com/segmentio/migrate/source"
+	sStub "github.com/segmentio/migrate/source/stub"
 )
 
 // sourceStubMigrations hold the following migrations:
@@ -104,7 +104,7 @@ func ExampleNewWithDatabaseInstance() {
 
 	// Create driver instance from db.
 	// Check each driver if it supports the WithInstance function.
-	// `import "github.com/mattes/migrate/database/postgres"`
+	// `import "github.com/segmentio/migrate/database/postgres"`
 	instance, err := dStub.WithInstance(db, &dStub.Config{})
 	if err != nil {
 		log.Fatal(err)
@@ -154,7 +154,7 @@ func ExampleNewWithSourceInstance() {
 
 	// Create driver instance from DummyInstance di.
 	// Check each driver if it support the WithInstance function.
-	// `import "github.com/mattes/migrate/source/stub"`
+	// `import "github.com/segmentio/migrate/source/stub"`
 	instance, err := sStub.WithInstance(di, &sStub.Config{})
 	if err != nil {
 		log.Fatal(err)

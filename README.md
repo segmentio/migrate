@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/mattes/migrate.svg?branch=master)](https://travis-ci.org/mattes/migrate)
-[![GoDoc](https://godoc.org/github.com/mattes/migrate?status.svg)](https://godoc.org/github.com/mattes/migrate)
-[![Coverage Status](https://coveralls.io/repos/github/mattes/migrate/badge.svg?branch=v3.0-prev)](https://coveralls.io/github/mattes/migrate?branch=v3.0-prev)
-[![packagecloud.io](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/mattes/migrate?filter=debs)
+[![Build Status](https://travis-ci.org/segmentio/migrate.svg?branch=master)](https://travis-ci.org/segmentio/migrate)
+[![GoDoc](https://godoc.org/github.com/segmentio/migrate?status.svg)](https://godoc.org/github.com/segmentio/migrate)
+[![Coverage Status](https://coveralls.io/repos/github/segmentio/migrate/badge.svg?branch=v3.0-prev)](https://coveralls.io/github/segmentio/migrate?branch=v3.0-prev)
+[![packagecloud.io](https://img.shields.io/badge/deb-packagecloud.io-844fec.svg)](https://packagecloud.io/segmentio/migrate?filter=debs)
 
 # migrate
 
@@ -14,7 +14,7 @@ __Database migrations written in Go. Use as [CLI](#cli-usage) or import as [libr
  * Database drivers don't assume things or try to correct user input. When in doubt, fail.
 
 
-Looking for [v1](https://github.com/mattes/migrate/tree/v1)?
+Looking for [v1](https://github.com/segmentio/migrate/tree/v1)?
 
 
 ## Databases
@@ -27,10 +27,10 @@ Database drivers run migrations. [Add a new database?](database/driver.go)
   * [Cassandra](database/cassandra)
   * [SQLite](database/sqlite3)
   * [MySQL/ MariaDB](database/mysql)
-  * [Neo4j](database/neo4j) ([todo #167](https://github.com/mattes/migrate/issues/167))
-  * [MongoDB](database/mongodb) ([todo #169](https://github.com/mattes/migrate/issues/169))
-  * [CrateDB](database/crate) ([todo #170](https://github.com/mattes/migrate/issues/170))
-  * [Shell](database/shell) ([todo #171](https://github.com/mattes/migrate/issues/171))
+  * [Neo4j](database/neo4j) ([todo #167](https://github.com/segmentio/migrate/issues/167))
+  * [MongoDB](database/mongodb) ([todo #169](https://github.com/segmentio/migrate/issues/169))
+  * [CrateDB](database/crate) ([todo #170](https://github.com/segmentio/migrate/issues/170))
+  * [Shell](database/shell) ([todo #171](https://github.com/segmentio/migrate/issues/171))
   * [Google Cloud Spanner](database/spanner)
   * [CockroachDB](database/cockroachdb)
   * [ClickHouse](database/clickhouse)
@@ -56,7 +56,7 @@ Source drivers read migrations from local or remote sources. [Add a new source?]
 
 __[CLI Documentation](cli)__
 
-([brew todo #156](https://github.com/mattes/migrate/issues/156))
+([brew todo #156](https://github.com/segmentio/migrate/issues/156))
 
 ```
 $ brew install migrate --with-postgres
@@ -69,24 +69,24 @@ $ migrate -database postgres://localhost:5432/database up 2
  * API is stable and frozen for this release (v3.x).
  * Package migrate has no external dependencies.
  * Only import the drivers you need.
-   (check [dependency_tree.txt](https://github.com/mattes/migrate/releases) for each driver)
+   (check [dependency_tree.txt](https://github.com/segmentio/migrate/releases) for each driver)
  * To help prevent database corruptions, it supports graceful stops via `GracefulStop chan bool`.
  * Bring your own logger.
  * Uses `io.Reader` streams internally for low memory overhead.
  * Thread-safe and no goroutine leaks.
 
-__[Go Documentation](https://godoc.org/github.com/mattes/migrate)__
+__[Go Documentation](https://godoc.org/github.com/segmentio/migrate)__
 
 ```go
 import (
-    "github.com/mattes/migrate"
-    _ "github.com/mattes/migrate/database/postgres"
-    _ "github.com/mattes/migrate/source/github"
+    "github.com/segmentio/migrate"
+    _ "github.com/segmentio/migrate/database/postgres"
+    _ "github.com/segmentio/migrate/source/github"
 )
 
 func main() {
     m, err := migrate.New(
-        "github://mattes:personal-access-token@mattes/migrate_test",
+        "github://mattes:personal-access-token@segmentio/migrate_test",
         "postgres://localhost:5432/database?sslmode=enable")
     m.Steps(2)
 }
@@ -98,9 +98,9 @@ Want to use an existing database client?
 import (
     "database/sql"
     _ "github.com/lib/pq"
-    "github.com/mattes/migrate"
-    "github.com/mattes/migrate/database/postgres"
-    _ "github.com/mattes/migrate/source/file"
+    "github.com/segmentio/migrate"
+    "github.com/segmentio/migrate/database/postgres"
+    _ "github.com/segmentio/migrate/source/file"
 )
 
 func main() {

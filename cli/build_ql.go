@@ -3,5 +3,5 @@
 package main
 
 import (
-	_ "github.com/mattes/migrate/database/ql"
+	_ "github.com/segmentio/migrate/database/ql"
 )

@@ -5,8 +5,8 @@
 #### With Go toolchain
 
 ```
-$ go get -u -d github.com/mattes/migrate/cli github.com/lib/pq
-$ go build -tags 'postgres' -o /usr/local/bin/migrate github.com/mattes/migrate/cli
+$ go get -u -d github.com/segmentio/migrate/cli github.com/lib/pq
+$ go build -tags 'postgres' -o /usr/local/bin/migrate github.com/segmentio/migrate/cli
 ```
 
 Note: This example builds the cli which will only work with postgres.  In order
@@ -17,7 +17,7 @@ correspond to the names of the sub-packages underneath the
 
 #### MacOS
 
-([todo #156](https://github.com/mattes/migrate/issues/156))
+([todo #156](https://github.com/segmentio/migrate/issues/156))
 
 ```
 $ brew install migrate --with-postgres
@@ -26,18 +26,18 @@ $ brew install migrate --with-postgres
 #### Linux (*.deb package)
 
 ```
-$ curl -L https://packagecloud.io/mattes/migrate/gpgkey | apt-key add -
-$ echo "deb https://packagecloud.io/mattes/migrate/ubuntu/ xenial main" > /etc/apt/sources.list.d/migrate.list
+$ curl -L https://packagecloud.io/segmentio/migrate/gpgkey | apt-key add -
+$ echo "deb https://packagecloud.io/segmentio/migrate/ubuntu/ xenial main" > /etc/apt/sources.list.d/migrate.list
 $ apt-get update
 $ apt-get install -y migrate
 ```
 
 #### Download pre-build binary (Windows, MacOS, or Linux)
 
-[Release Downloads](https://github.com/mattes/migrate/releases)
+[Release Downloads](https://github.com/segmentio/migrate/releases)
 
 ```
-$ curl -L https://github.com/mattes/migrate/releases/download/$version/migrate.$platform-amd64.tar.gz | tar xvz
+$ curl -L https://github.com/segmentio/migrate/releases/download/$version/migrate.$platform-amd64.tar.gz | tar xvz
 ```
 
 
@@ -80,7 +80,7 @@ $ migrate -database postgres://localhost:5432/database up 2
 If your migrations are hosted on github
 
 ```
-$ migrate -source github://mattes:personal-access-token@mattes/migrate_test \
+$ migrate -source github://mattes:personal-access-token@segmentio/migrate_test \
     -database postgres://localhost:5432/database down 2
 ```
 

@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 
-	st "github.com/mattes/migrate/source/testing"
+	st "github.com/segmentio/migrate/source/testing"
 )
 
 var GithubTestSecret = "" // username:token
@@ -23,7 +23,7 @@ func Test(t *testing.T) {
 	}
 
 	g := &Github{}
-	d, err := g.Open("github://" + GithubTestSecret + "@mattes/migrate_test_tmp/test")
+	d, err := g.Open("github://" + GithubTestSecret + "@segmentio/migrate_test_tmp/test")
 	if err != nil {
 		t.Fatal(err)
 	}

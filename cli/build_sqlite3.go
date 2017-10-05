@@ -3,5 +3,5 @@
 package main
 
 import (
-	_ "github.com/mattes/migrate/database/sqlite3"
+	_ "github.com/segmentio/migrate/database/sqlite3"
 )

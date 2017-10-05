@@ -30,7 +30,7 @@ after_success:
 before_deploy:
   - make build-cli
   - gem install --no-ri --no-rdoc fpm 
-  - fpm -s dir -t deb -n migrate -v "$(git describe --tags 2>/dev/null | cut -c 2-)" --license MIT -m matthias.kadenbach@gmail.com --url https://github.com/mattes/migrate --description='Database migrations' -a amd64 -p migrate.$(git describe --tags 2>/dev/null | cut -c 2-).deb --deb-no-default-config-files -f -C cli/build migrate.linux-amd64=/usr/bin/migrate
+  - fpm -s dir -t deb -n migrate -v "$(git describe --tags 2>/dev/null | cut -c 2-)" --license MIT -m matthias.kadenbach@gmail.com --url https://github.com/segmentio/migrate --description='Database migrations' -a amd64 -p migrate.$(git describe --tags 2>/dev/null | cut -c 2-).deb --deb-no-default-config-files -f -C cli/build migrate.linux-amd64=/usr/bin/migrate
 
 deploy:
   - provider: releases
@@ -39,7 +39,7 @@ deploy:
     skip_cleanup: true
     on:
       go: 1.8
-      repo: mattes/migrate
+      repo: segmentio/migrate
       tags: true
     file:
       - cli/build/migrate.linux-amd64.tar.gz
@@ -57,6 +57,6 @@ deploy:
     skip_cleanup: true
     on:
       go: 1.8
-      repo: mattes/migrate
+      repo: segmentio/migrate
       tags: true
 

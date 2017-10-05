@@ -3,7 +3,7 @@ package stub
 import (
 	"testing"
 
-	dt "github.com/mattes/migrate/database/testing"
+	dt "github.com/segmentio/migrate/database/testing"
 )
 
 func Test(t *testing.T) {

@@ -25,10 +25,10 @@ package main
 import (
     "database/sql"
     
-    _ "github.com/go-sql-driver/mysql"
-    "github.com/mattes/migrate"
-    "github.com/mattes/migrate/database/mysql"
-    _ "github.com/mattes/migrate/source/file"
+    _ "github.com/segmentio/mysql"
+    "github.com/segmentio/migrate"
+    "github.com/segmentio/migrate/database/mysql"
+    _ "github.com/segmentio/migrate/source/file"
 )
 
 func main() {

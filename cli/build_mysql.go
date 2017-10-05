@@ -3,5 +3,5 @@
 package main
 
 import (
-	_ "github.com/mattes/migrate/database/mysql"
+	_ "github.com/segmentio/migrate/database/mysql"
 )

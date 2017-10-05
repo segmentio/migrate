@@ -3,5 +3,5 @@
 package main
 
 import (
-	_ "github.com/mattes/migrate/database/postgres"
+	_ "github.com/segmentio/migrate/database/postgres"
 )
